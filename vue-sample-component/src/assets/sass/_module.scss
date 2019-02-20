@@ -1,0 +1,39 @@
+.m-label-01 {
+  width: 30%;
+  background-color: $gray-color-01;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.m-box-01 {
+  width: 70%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.m-list-01 {
+  &-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border: 1px solid $gray-color-02;
+  }
+  &-box {
+    display: flex;
+    padding: 10px;
+    background-color: $gray-color-01;
+    justify-content: space-between;
+  }
+}
+.m-list-02 {
+  border: 1px solid $gray-color-02;
+  border-bottom: none;
+  margin: 20px;
+  &-item {
+    padding: 10px;
+    border-bottom: 1px solid $gray-color-02;
+  }
+  &-box {
+    display: flex;
+  }
+  &-title {
+    margin-right: auto;
+  }
+}
