@@ -1,8 +1,10 @@
 <template>
   <div class="l-contents-01">
-    <div class="m-label-01">
-      アンケート設定
-    </div>
+    <label-name
+      text="アンケート設定"
+      :isRequired=true
+    >
+    </label-name>
     <div class="m-box-01">
       <ul class="m-list-01">
         <li class="m-list-01-item">
@@ -108,12 +110,14 @@
 import EditButton from '../components/button/Edit';
 import DeleteButton from '../components/button/Delete';
 import AddButton from '../components/button/Add';
+import LabelName from '../components/LabelName';
 
 export default {
   components: {
     EditButton,
     DeleteButton,
     AddButton,
+    LabelName,
   },
 };
 </script>
