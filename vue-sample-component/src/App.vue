@@ -1,3 +1,7 @@
+<style lang="scss">
+  @import 'assets/sass/styles';
+</style>
+
 <template>
   <div id="app">
     <questionnaire></questionnaire>

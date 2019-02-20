@@ -1,8 +1,6 @@
 <style lang="scss" scoped>
   .block {
-    ul {
-      background-color: red;
-    }
+    display: flex;
   }
 </style>
 
