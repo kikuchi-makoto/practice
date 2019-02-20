@@ -56,8 +56,14 @@
           <div class="m-list-01-box">
             <h2>コース1</h2>
             <div>
-              <button type="button">編集</button>
-              <button type="button">削除</button>
+              <edit-button
+                text="編集"
+              >
+              </edit-button>
+              <delete-button
+                text="削除"
+              >
+              </delete-button>
             </div>
           </div>
           <ul class="m-list-02">
@@ -65,8 +71,14 @@
               <div class="m-list-02-box">
                 <h3 class="m-list-02-title">景品名1</h3>
                 <div>
-                  <button type="button">編集</button>
-                  <button type="button">削除</button>
+                  <edit-button
+                    text="編集"
+                  >
+                  </edit-button>
+                  <delete-button
+                    text="削除"
+                  >
+                  </delete-button>
                 </div>
                 <p>有効</p>
               </div>
@@ -75,21 +87,36 @@
               <div class="m-list-02-box">
                 <h3 class="m-list-02-title">景品名2</h3>
                 <div>
-                  <button type="button">編集</button>
-                  <button type="button">削除</button>
+                  <edit-button
+                    text="編集"
+                  >
+                  </edit-button>
+                  <delete-button
+                    text="削除"
+                  >
+                  </delete-button>
                 </div>
                 <p>無効</p>
               </div>
             </li>
           </ul>
-          <button type="button">景品追加</button>
+          <add-button
+            text="景品追加"
+          >
+          </add-button>
         </li>
         <li class="m-list-01-item">
           <div class="m-list-01-box">
             <h2>コース2</h2>
             <div>
-              <button type="button">編集</button>
-              <button type="button">削除</button>
+              <edit-button
+                text="編集"
+              >
+              </edit-button>
+              <delete-button
+                text="削除"
+              >
+              </delete-button>
             </div>
           </div>
           <ul class="m-list-02">
@@ -97,17 +124,43 @@
               <div class="m-list-02-box">
                 <h3 class="m-list-02-title">景品名1</h3>
                 <div>
-                  <button type="button">編集</button>
-                  <button type="button">削除</button>
+                  <edit-button
+                    text="編集"
+                  >
+                  </edit-button>
+                  <delete-button
+                    text="削除"
+                  >
+                  </delete-button>
                 </div>
                 <p>有効</p>
               </div>
             </li>
           </ul>
-          <button type="button">景品追加</button>
+          <add-button
+            text="景品追加"
+          >
+          </add-button>
         </li>
       </ul>
-      <button type="button">コース追加</button>
+      <add-button
+        text="コース追加"
+      >
+      </add-button>
     </div>
   </div>
 </template>
+
+<script>
+import EditButton from '../components/button/Edit';
+import DeleteButton from '../components/button/Delete';
+import AddButton from '../components/button/Add';
+
+export default {
+  components: {
+    EditButton,
+    DeleteButton,
+    AddButton,
+  },
+};
+</script>
