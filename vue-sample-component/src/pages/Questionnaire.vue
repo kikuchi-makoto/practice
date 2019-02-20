@@ -1,5 +1,13 @@
+<style lang="scss" scoped>
+  .block {
+    ul {
+      background-color: red;
+    }
+  }
+</style>
+
 <template>
-  <div>
+  <div class="block">
     <div>
       アンケート設定
     </div>
