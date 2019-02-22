@@ -5,10 +5,14 @@
       <div>
         <edit-button
           text="編集"
+          eventName="editSection"
+          @editSection="editSection"
         >
         </edit-button>
         <delete-button
           text="削除"
+          eventName="deleteSection"
+          @deleteSection="deleteSection"
         >
         </delete-button>
       </div>
@@ -25,6 +29,8 @@
     </p>
     <add-button
       text="景品追加"
+      eventName="addPrize"
+      @addPrize="addPrize"
     >
     </add-button>
   </li>
@@ -50,6 +56,17 @@ export default {
     },
     nonPrize() {
       return nonPrize;
+    },
+  },
+  methods: {
+    addPrize() {
+      console.log('click 景品追加');
+    },
+    editSection() {
+      console.log('click セクション編集');
+    },
+    deleteSection() {
+      console.log('click セクション削除');
     },
   },
   components: {

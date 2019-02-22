@@ -7,10 +7,14 @@
       <div>
         <edit-button
           text="編集"
+          eventName="editQuestionnaire"
+          @editQuestionnaire="editQuestionnaire"
         >
         </edit-button>
         <delete-button
           text="削除"
+          eventName="deleteQuestionnaire"
+          @deleteQuestionnaire="deleteQuestionnaire"
         >
         </delete-button>
       </div>
@@ -32,6 +36,14 @@ export default {
   computed: {
     isStatus() {
       return this.prize.status ? '有効' : '無効';
+    },
+  },
+  methods: {
+    editQuestionnaire() {
+      console.log('click アンケート編集');
+    },
+    deleteQuestionnaire() {
+      console.log('click アンケート削除');
     },
   },
   components: {

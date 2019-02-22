@@ -10,6 +10,8 @@
       </ul>
       <add-button
         text="コース追加"
+        eventName="addCourse"
+        @addCourse="addCourse"
       >
       </add-button>
     </div>
@@ -34,6 +36,11 @@ export default {
     },
     nonQuestionnaire() {
       return nonQuestionnaire;
+    },
+  },
+  methods: {
+    addCourse() {
+      console.log('click コース追加');
     },
   },
   components: {

@@ -6,13 +6,19 @@
 </style>
 
 <template>
-  <button type="button" class="button">{{text}}</button>
+  <button @click="deleteId" type="button" class="button">{{text}}</button>
 </template>
 
 <script>
 export default {
   props: {
     text: String,
+    eventName: String,
+  },
+  methods: {
+    deleteId() {
+      this.$emit(this.eventName);
+    },
   },
 };
 </script>

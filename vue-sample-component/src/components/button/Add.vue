@@ -13,7 +13,7 @@
 
 <template>
   <div class="button">
-    <button type="button">{{text}}</button>
+    <button @click="add" type="button">{{text}}</button>
   </div>
 </template>
 
@@ -21,6 +21,12 @@
 export default {
   props: {
     text: String,
+    eventName: String,
+  },
+  methods: {
+    add() {
+      this.$emit(this.eventName);
+    },
   },
 };
 </script>
