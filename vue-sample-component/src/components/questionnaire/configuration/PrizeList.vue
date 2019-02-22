@@ -1,7 +1,9 @@
 <template>
   <li class="m-list-02-item">
     <div class="m-list-02-box">
-      <h3 class="m-list-02-title">景品名1</h3>
+      <h3 class="m-list-02-title">
+        {{prize.title}}
+      </h3>
       <div>
         <edit-button
           text="編集"
@@ -12,7 +14,9 @@
         >
         </delete-button>
       </div>
-      <p>有効</p>
+      <p>
+        {{this.isStatus}}
+      </p>
     </div>
   </li>
 </template>
@@ -22,6 +26,14 @@ import EditButton from '../../button/Edit';
 import DeleteButton from '../../button/Delete';
 
 export default {
+  props: {
+    prize: Object,
+  },
+  computed: {
+    isStatus() {
+      return this.prize.status ? '有効' : '無効';
+    },
+  },
   components: {
     EditButton,
     DeleteButton,

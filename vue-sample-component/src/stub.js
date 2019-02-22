@@ -6,13 +6,13 @@ for (let i = 0; i < 3; i += 1) {
   db.questionnaire.push({
     id: i + 1,
     courseTitle: `コース その${i + 1}`,
-    Prize: [
+    prize: [
       {
-        PrizeTitle: `景品 その${i + 1}`,
+        title: `景品 その${i + 1}`,
         status: true,
       },
       {
-        PrizeTitle: `景品 その${i + 2}`,
+        title: `景品 その${i + 2}`,
         status: true,
       },
     ],

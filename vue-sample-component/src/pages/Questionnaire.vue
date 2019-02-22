@@ -5,7 +5,10 @@
       :isRequired=true
     >
     </label-name>
-    <configuration></configuration>
+    <configuration
+      :dataList ="db"
+    >
+    </configuration>
   </div>
 </template>
 

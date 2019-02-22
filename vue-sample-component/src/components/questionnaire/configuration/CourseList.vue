@@ -1,7 +1,7 @@
 <template>
   <li class="m-list-01-item">
     <div class="m-list-01-box">
-      <h2>コース1</h2>
+      <h2>{{questionnaire.courseTitle}}</h2>
       <div>
         <edit-button
           text="編集"
@@ -14,7 +14,11 @@
       </div>
     </div>
     <ul class="m-list-02">
-      <prize-list></prize-list>
+      <prize-list
+        v-for="(prize, index) in this.prizeList" :key="index"
+        :prize="prize"
+      >
+      ></prize-list>
     </ul>
     <add-button
       text="景品追加"
@@ -30,6 +34,14 @@ import AddButton from '../../button/Add';
 import PrizeList from './PrizeList';
 
 export default {
+  props: {
+    questionnaire: Object,
+  },
+  computed: {
+    prizeList() {
+      return this.questionnaire.prize;
+    },
+  },
   components: {
     EditButton,
     DeleteButton,
