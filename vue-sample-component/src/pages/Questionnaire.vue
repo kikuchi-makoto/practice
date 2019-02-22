@@ -12,8 +12,14 @@
 <script>
 import LabelName from '../components/LabelName';
 import Configuration from '../components/questionnaire/configuration/Index';
+import db from '../stub';
 
 export default {
+  data() {
+    return {
+      db: db.questionnaire,
+    };
+  },
   components: {
     LabelName,
     Configuration,
