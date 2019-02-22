@@ -14,7 +14,7 @@
       </add-button>
     </div>
     <div v-else>
-      表示するアンケートがございません。
+      {{nonQuestionnaire}}
     </div>
   </div>
 </template>
@@ -22,6 +22,7 @@
 <script>
 import CourseList from './CourseList';
 import AddButton from '../../button/Add';
+import { nonQuestionnaire } from '../../../defines';
 
 export default {
   props: {
@@ -30,6 +31,9 @@ export default {
   computed: {
     hasQuestionnaire() {
       return this.dataList.length !== 0;
+    },
+    nonQuestionnaire() {
+      return nonQuestionnaire;
     },
   },
   components: {

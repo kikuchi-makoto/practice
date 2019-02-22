@@ -13,13 +13,16 @@
         </delete-button>
       </div>
     </div>
-    <ul class="m-list-02">
+    <ul v-if="hasPrize" class="m-list-02">
       <prize-list
         v-for="(prize, index) in this.prizeList" :key="index"
         :prize="prize"
       >
       ></prize-list>
     </ul>
+    <p v-else>
+      {{nonPrize}}
+    </p>
     <add-button
       text="景品追加"
     >
@@ -32,6 +35,7 @@ import EditButton from '../../button/Edit';
 import DeleteButton from '../../button/Delete';
 import AddButton from '../../button/Add';
 import PrizeList from './PrizeList';
+import { nonPrize } from '../../../defines';
 
 export default {
   props: {
@@ -40,6 +44,12 @@ export default {
   computed: {
     prizeList() {
       return this.questionnaire.prize;
+    },
+    hasPrize() {
+      return this.questionnaire.prize.length !== 0;
+    },
+    nonPrize() {
+      return nonPrize;
     },
   },
   components: {
