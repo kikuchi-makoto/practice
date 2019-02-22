@@ -1,7 +1,7 @@
 <template>
   <li class="m-list-01-item">
     <div class="m-list-01-box">
-      <h2>{{questionnaire.courseTitle}}</h2>
+      <h2>{{section.title}}</h2>
       <div>
         <edit-button
           text="編集"
@@ -17,50 +17,50 @@
         </delete-button>
       </div>
     </div>
-    <ul v-if="hasPrize" class="m-list-02">
-      <prize-list
-        v-for="(prize, index) in this.prizeList" :key="index"
-        :prize="prize"
+    <ul v-if="hasQuestion" class="m-list-02">
+      <question-list
+        v-for="(question, index) in this.QuestionList" :key="index"
+        :question="question"
       >
-      ></prize-list>
+      ></question-list>
     </ul>
     <p v-else>
-      {{nonPrize}}
+      {{nonQuestion}}
     </p>
     <add-button
-      text="景品追加"
-      eventName="addPrize"
-      @addPrize="addPrize"
+      text="アンケート追加"
+      eventName="addQuestion"
+      @addQuestion="addQuestion"
     >
     </add-button>
   </li>
 </template>
 
 <script>
-import EditButton from '../../button/Edit';
-import DeleteButton from '../../button/Delete';
-import AddButton from '../../button/Add';
-import PrizeList from './PrizeList';
-import { nonPrize } from '../../../defines';
+import EditButton from '../button/Edit';
+import DeleteButton from '../button/Delete';
+import AddButton from '../button/Add';
+import QuestionList from './QuestionList';
+import { nonQuestion } from '../../defines';
 
 export default {
   props: {
-    questionnaire: Object,
+    section: Object,
   },
   computed: {
-    prizeList() {
-      return this.questionnaire.prize;
+    QuestionList() {
+      return this.section.question;
     },
-    hasPrize() {
-      return this.questionnaire.prize.length !== 0;
+    hasQuestion() {
+      return this.section.question.length !== 0;
     },
-    nonPrize() {
-      return nonPrize;
+    nonQuestion() {
+      return nonQuestion;
     },
   },
   methods: {
-    addPrize() {
-      console.log('click 景品追加');
+    addQuestion() {
+      console.log('click アンケート追加');
     },
     editSection() {
       console.log('click セクション編集');
@@ -73,7 +73,7 @@ export default {
     EditButton,
     DeleteButton,
     AddButton,
-    PrizeList,
+    QuestionList,
   },
 };
 </script>

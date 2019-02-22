@@ -5,16 +5,16 @@
       :isRequired=true
     >
     </label-name>
-    <configuration
+    <questionnaire
       :dataList ="db"
     >
-    </configuration>
+    </questionnaire>
   </div>
 </template>
 
 <script>
 import LabelName from '../components/LabelName';
-import Configuration from '../components/questionnaire/configuration/Index';
+import Questionnaire from '../components/questionnaire/Index';
 import db from '../stub';
 
 export default {
@@ -25,7 +25,7 @@ export default {
   },
   components: {
     LabelName,
-    Configuration,
+    Questionnaire,
   },
 };
 </script>

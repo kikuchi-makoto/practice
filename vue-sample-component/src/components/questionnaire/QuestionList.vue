@@ -2,19 +2,19 @@
   <li class="m-list-02-item">
     <div class="m-list-02-box">
       <h3 class="m-list-02-title">
-        {{prize.title}}
+        {{question.title}}
       </h3>
       <div>
         <edit-button
           text="編集"
-          eventName="editQuestionnaire"
-          @editQuestionnaire="editQuestionnaire"
+          eventName="editQuestion"
+          @editQuestion="editQuestion"
         >
         </edit-button>
         <delete-button
           text="削除"
-          eventName="deleteQuestionnaire"
-          @deleteQuestionnaire="deleteQuestionnaire"
+          eventName="deleteQuestion"
+          @deleteQuestion="deleteQuestion"
         >
         </delete-button>
       </div>
@@ -26,23 +26,23 @@
 </template>
 
 <script>
-import EditButton from '../../button/Edit';
-import DeleteButton from '../../button/Delete';
+import EditButton from '../button/Edit';
+import DeleteButton from '../button/Delete';
 
 export default {
   props: {
-    prize: Object,
+    question: Object,
   },
   computed: {
     isStatus() {
-      return this.prize.status ? '有効' : '無効';
+      return this.question.status ? '有効' : '無効';
     },
   },
   methods: {
-    editQuestionnaire() {
+    editQuestion() {
       console.log('click アンケート編集');
     },
-    deleteQuestionnaire() {
+    deleteQuestion() {
       console.log('click アンケート削除');
     },
   },

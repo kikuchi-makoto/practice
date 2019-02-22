@@ -1,2 +1,2 @@
-export const nonQuestionnaire = '表示するアンケートがございません。';
-export const nonPrize = '表示する景品がございません。';
+export const nonSection = '表示するセクションがございません。';
+export const nonQuestion = '表示するがアンケートございません。';

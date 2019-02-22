@@ -7,14 +7,14 @@ const randomBoolean = data => ((data % 2 === 0) || false);
 for (let i = 0; i < 3; i += 1) {
   db.questionnaire.push({
     id: i + 1,
-    courseTitle: `コース その${i + 1}`,
-    prize: [
+    title: `セクション その${i + 1}`,
+    question: [
       {
-        title: `景品 その${i + 1}`,
+        title: `アンケート その${i + 1}`,
         status: randomBoolean(i),
       },
       {
-        title: `景品 その${i + 2}`,
+        title: `アンケート その${i + 2}`,
         status: randomBoolean(i + 1),
       },
     ],
