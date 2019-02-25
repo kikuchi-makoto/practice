@@ -1,5 +1,7 @@
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const AutoPrefixer = require('autoprefixer');
 
 module.exports = [
@@ -66,10 +68,19 @@ module.exports = [
       splitChunks: {
         chunks: 'all',
       },
+      minimizer: [
+        new UglifyJsPlugin({
+          cache: true,
+          parallel: true,
+          sourceMap: true,
+        }),
+        new OptimizeCSSAssetsPlugin({}),
+      ],
     },
     plugins: [
       new MiniCssExtractPlugin({
         filename: 'css/style.css',
+        chunkFilename: 'css/[id].css',
       }),
     ],
   },
