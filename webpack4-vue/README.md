@@ -7,6 +7,7 @@
 - eslint for Vue.js
 - sideEffects: false
 - loader
+    - vue
     - babel
     - style(MiniCssExtractPlugin.loader)/css/postcss/sass
     - url
