@@ -7,6 +7,7 @@
 - loader
     - babel
     - style(MiniCssExtractPlugin.loader)/css/postcss/sass
+    - url
 - extensions .js/.vue
 - Chunks(all)
 - minify to style.css
