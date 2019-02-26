@@ -4,13 +4,14 @@
 
 - webpack ^4.29.5
 - webpack-dev-server
-- babel
-- style(MiniCssExtractPlugin.loader)/css/postcss/sass
+- loader
+    - babel
+    - style(MiniCssExtractPlugin.loader)/css/postcss/sass
 - extensions .js/.vue
 - Chunks(all)
 - minify to style.css
 - eslint for Vue.js
-- sideEffects: false,
+- sideEffects: false
 
 ## 参考サイト
 
