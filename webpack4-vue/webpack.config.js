@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const AutoPrefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 module.exports = [
   {
@@ -95,6 +96,13 @@ module.exports = [
           to: path.resolve(__dirname, 'dist/images/'),
         },
       ]),
+      new ImageminPlugin({
+        disable: process.env.NODE_ENV !== 'production',
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        pngquant: {
+          quality: '95-100',
+        },
+      }),
     ],
   },
 ];

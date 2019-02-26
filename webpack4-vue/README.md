@@ -4,6 +4,8 @@
 
 - webpack ^4.29.5
 - webpack-dev-server
+- eslint for Vue.js
+- sideEffects: false
 - loader
     - babel
     - style(MiniCssExtractPlugin.loader)/css/postcss/sass
@@ -11,9 +13,10 @@
 - extensions .js/.vue
 - Chunks(all)
 - minify to style.css
-- eslint for Vue.js
-- sideEffects: false
-- copy to dist from src
+- pluguins
+    - MiniCssExtractPlugin
+    - CopyWebpackPlugin
+    - ImageminPlugin
 
 ## 参考サイト
 
