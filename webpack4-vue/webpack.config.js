@@ -59,6 +59,13 @@ module.exports = [
             },
           ],
         },
+        {
+          test: /\.(png|jpg|gif)$/i,
+          loader: 'url-loader',
+          options: {
+            limit: 8192,
+          },
+        },
       ],
     },
     resolve: {
@@ -71,7 +78,6 @@ module.exports = [
       minimizer: [
         new UglifyJsPlugin({
           cache: true,
-          parallel: true,
           sourceMap: true,
         }),
         new OptimizeCSSAssetsPlugin({}),
