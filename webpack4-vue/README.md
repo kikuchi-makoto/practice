@@ -13,6 +13,7 @@
 - minify to style.css
 - eslint for Vue.js
 - sideEffects: false
+- copy to dist from src
 
 ## 参考サイト
 
