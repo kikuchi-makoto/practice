@@ -8,7 +8,7 @@
 - sideEffects: false
 - resolve
     - extensions .js/.vue
-    - alias vue$/`@`
+    - alias vue$/@
 - loader
     - vue
     - babel
@@ -19,6 +19,7 @@
         - sass
     - url
         - image file
+        - media file
 - Chunks(all)
 - minimize to style.css
 - plugins

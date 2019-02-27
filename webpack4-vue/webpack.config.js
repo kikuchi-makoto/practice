@@ -81,6 +81,14 @@ module.exports = [
             limit: 10000,
           },
         },
+        {
+          test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            name: 'media/[name].[ext]',
+          },
+        },
       ],
     },
     optimization: {
@@ -105,6 +113,10 @@ module.exports = [
         {
           from: path.resolve(__dirname, 'src/images/'),
           to: path.resolve(__dirname, 'dist/images/'),
+        },
+        {
+          from: path.resolve(__dirname, 'src/media/'),
+          to: path.resolve(__dirname, 'dist/media/'),
         },
       ]),
       new ImageminPlugin({
