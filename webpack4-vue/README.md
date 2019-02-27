@@ -6,18 +6,27 @@
 - webpack-dev-server
 - eslint for Vue.js
 - sideEffects: false
+- resolve
+    - extensions .js/.vue
+    - alias vue$/`@`
 - loader
     - vue
     - babel
-    - style(MiniCssExtractPlugin.loader)/css/postcss/sass
+    - scss
+        - style(MiniCssExtractPlugin.loader)
+        - css
+        - postcss
+        - sass
     - url
-- extensions .js/.vue
+        - image file
 - Chunks(all)
-- minify to style.css
-- pluguins
+- minimize to style.css
+- plugins
+    - VueLoaderPlugin
     - MiniCssExtractPlugin
     - CopyWebpackPlugin
     - ImageminPlugin
+    - HtmlWebpackPlugin
 
 ## 参考サイト
 
