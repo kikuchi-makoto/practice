@@ -1,10 +1,12 @@
 const path = require('path');
+const { VueLoaderPlugin } = require('vue-loader');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const AutoPrefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = [
   {
@@ -75,6 +77,9 @@ module.exports = [
       ],
     },
     resolve: {
+      alias: {
+        vue$: 'vue/dist/vue.esm.js',
+      },
       extensions: ['.js', '.vue'],
     },
     optimization: {
@@ -90,6 +95,7 @@ module.exports = [
       ],
     },
     plugins: [
+      new VueLoaderPlugin(),
       new MiniCssExtractPlugin({
         filename: 'css/style.css',
         chunkFilename: 'css/[id].css',
@@ -106,6 +112,9 @@ module.exports = [
         pngquant: {
           quality: '95-100',
         },
+      }),
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, 'src/index.html'),
       }),
     ],
   },
