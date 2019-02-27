@@ -1,4 +1,9 @@
-$red-color-01: red;
-p {
-  color: $red-color-01;
-}
+@charset "utf-8";
+
+@import "./_variable";
+@import "./_base";
+@import "./_layout";
+@import "./_mixin";
+@import "./_module";
+@import "./_function";
+@import "./_responsive";
