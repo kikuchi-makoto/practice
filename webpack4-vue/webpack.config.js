@@ -68,10 +68,10 @@ module.exports = [
           ],
         },
         {
-          test: /\.(png|jpg|gif)$/i,
+          test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
           loader: 'url-loader',
           options: {
-            limit: 8192,
+            limit: 10000,
           },
         },
       ],
