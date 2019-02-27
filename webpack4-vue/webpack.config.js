@@ -27,6 +27,13 @@ module.exports = [
       port: 3000,
       open: true,
     },
+    resolve: {
+      extensions: ['.js', '.vue'],
+      alias: {
+        vue$: 'vue/dist/vue.esm.js',
+        '@': path.resolve(__dirname, 'src'),
+      },
+    },
     module: {
       rules: [
         {
@@ -75,12 +82,6 @@ module.exports = [
           },
         },
       ],
-    },
-    resolve: {
-      alias: {
-        vue$: 'vue/dist/vue.esm.js',
-      },
-      extensions: ['.js', '.vue'],
     },
     optimization: {
       splitChunks: {
